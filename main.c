@@ -1,20 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void print_star()
+void square( int a )
 {
-int i;
-for( i = 0; i < 10; i++ )
-printf("*");
+a = a*a;
 }
 
 int main(int argc, char *argv[]) {
-	
-	int i;
-	
-	print_star(); 
-	print_star(); 
-	print_star(); 
-	
-	return 0;
+   
+int a = 2;
+square(a);
+printf("a=%i\n",a);
+   
+   return 0;
 }
