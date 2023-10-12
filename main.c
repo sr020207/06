@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void square( int a )
+int square( int a )
 {
-a = a*a;
+return (a *a);
 }
 
 int main(int argc, char *argv[]) {
