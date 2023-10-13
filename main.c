@@ -1,23 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void func(void) {
-int x;
-printf("func1 x is at %p\n", &x);
+int sumTwo(int a, int b)
+{
+	return a + b;
 }
    
-int main(int argc, char *argv[]) {
+int square(int n)
+{
+	return n * n;
+}
+
+int get_max(int x, int y) {
 	
-int x;
+	if (x > y)
+    return x;
+    
+    return y;
+}
 
-printf("main x is at %p\n", &x); //%p : 16진수로표현 
-func();
+int main(int argc, char *argv[]) {
 
-/*
-출력 : 
-main x is at 000000000062FE1C
-func1 x is at 000000000062FDDC
-*/
-   
+int num1 = 30;
+int num2 = 5;
+
+printf("sumTwo : %i \n", sumTwo(num1,num2) );
+
+printf("square : %i \n", square(num1) );
+
+printf("max : %i \n", get_max(num1, num2) );
+
    return 0; 
 }
