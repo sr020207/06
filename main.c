@@ -1,34 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int sumTwo(int a, int b)
+
+int factorial(int x) //팩토리얼 함수 
 {
-	return a + b;
-}
-   
-int square(int n)
-{
-	return n * n;
+	 int i, result;
+	result = 1;
+	    for (i = 1; i<= x; i++) {
+		result *= i;
+		}
+        
+        return result;
 }
 
-int get_max(int x, int y) {
-	
-	if (x > y)
-    return x;
-    
-    return y;
+int combination(int n, int r) {
+    if (n < r || n < 0 || r < 0) {
+        return 0;
+    }
+    return factorial(n) / (factorial(r) * factorial(n - r));
 }
+
+
+
 
 int main(int argc, char *argv[]) {
+	
+int n, r;
 
-int num1 = 30;
-int num2 = 5;
+printf("n 값을 입력하세요 : \n");
+scanf("%d", &n);
 
-printf("sumTwo : %i \n", sumTwo(num1,num2) );
+printf("r 값을 입력하세요 : \n");
+scanf("%d", &r);
 
-printf("square : %i \n", square(num1) );
+int result = combination(n, r);
 
-printf("max : %i \n", get_max(num1, num2) );
+printf("factorial n : %i \n", factorial(n) );
+
+printf("factorial n-r : %i \n", factorial(n-r) );
+
+printf("factorial r : %i \n", factorial(r) );
+
+printf("combination : %i \n", result );
+
 
    return 0; 
 }
